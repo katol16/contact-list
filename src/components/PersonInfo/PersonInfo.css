@@ -1,71 +1,72 @@
 .person {
-    display: flex;
-    height: 100px;
-    max-width: 300px;
-    /*// for the additional feature to set different view  */
-    /*// remove max-width and add flex: 1 1 300px;*/
-    /*flex: 1 1 300px; !* min 300px, rośnie jeśli jest miejsce *!*/
-    justify-content: center;
-    flex-direction: column;
-    padding: 22px;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
-    margin: 10px 0;
-    background: #fff;
-    cursor: pointer;
-    border: 2px solid transparent;
+  display: flex;
+  height: 100px;
+  max-width: 300px;
+  /*// for the additional feature to set different view  */
+  /*// remove max-width and add flex: 1 1 300px;*/
+  /*flex: 1 1 300px; !* min 300px, rośnie jeśli jest miejsce *!*/
+  justify-content: center;
+  flex-direction: column;
+  padding: 22px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+  margin: 10px 0;
+  background: #fff;
+  cursor: pointer;
+  border: 2px solid transparent;
 }
 
-.person:hover, .selectedPerson {
-    border: 2px solid pink;
+.person:hover,
+.selectedPerson {
+  border: 2px solid pink;
 }
 
 .personInfo {
-    display: flex;
-    align-items: center;
-    padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
 }
 
 .initials {
-    width: 40px;
-    height: 40px;
-    border: 2px solid #333;
-    color: #333;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 400;
-    box-sizing: border-box;
-    flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #333;
+  color: #333;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .nameAndTitle {
-    margin-left: 15px;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    min-width: 0;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  min-width: 0;
 }
 
 .firstNameLastName {
-    color: #333;
-    font-size: 26px;
-    font-weight: 700;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  color: #333;
+  font-size: 26px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .jobTitle {
-    color: #e74c3c;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 400;
+  color: #e74c3c;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 400;
 }
 
 .emailAddress {
-    color: #666;
-    font-size: 14px;
-    line-height: 1.8em;
-    text-align: center;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.8em;
+  text-align: center;
 }

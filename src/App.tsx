@@ -1,11 +1,10 @@
-import React from "react";
-import { ContactList, Spinner } from "./components";
-import { useContacts, useSelectableList } from "./hooks";
+import React from 'react';
+import { ContactList, Spinner } from './components';
+import { useContacts, useSelectableList } from './hooks';
 
 function App() {
   const { data, loading, error, fetchContacts } = useContacts();
-  const { selectedIds, selectedContacts, unselectedContacts, toggle } =
-    useSelectableList(data);
+  const { selectedIds, selectedContacts, unselectedContacts, toggle } = useSelectableList(data);
 
   return (
     <div className="App">
@@ -14,7 +13,7 @@ function App() {
         <ContactList list={selectedContacts} toggle={toggle} isSelected />
         <hr />
         <ContactList list={unselectedContacts} toggle={toggle} />
-        {loading && <Spinner/>}
+        {loading && <Spinner />}
         {error && <div className="error">{error}</div>}
         <button className="loadMoreBtn" onClick={fetchContacts} disabled={loading}>
           Load more

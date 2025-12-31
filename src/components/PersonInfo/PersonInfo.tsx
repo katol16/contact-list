@@ -1,6 +1,6 @@
-import React, { memo } from "react";
-import type { Contact } from "../../types";
-import "./PersonInfo.css";
+import React, { memo } from 'react';
+import type { Contact } from '../../types';
+import './PersonInfo.css';
 
 interface PersonInfoProps {
   data: Contact;
@@ -8,16 +8,18 @@ interface PersonInfoProps {
   isSelected: boolean;
 }
 
-export const PersonInfo = memo(({ data, onSelect, isSelected }: PersonInfoProps) => {
-  console.log("🔹 PersonInfo render:", data.id);
+const PersonInfoComponent = ({ data, onSelect, isSelected }: PersonInfoProps) => {
+  console.log('PersonInfo render:', data.id);
   const { id, firstNameLastName, jobTitle, emailAddress } = data;
   return (
-    <div
-      onClick={() => onSelect(id)}
-      className={`person ${isSelected ? "selectedPerson" : ""}`}
-    >
+    <div onClick={() => onSelect(id)} className={`person ${isSelected ? 'selectedPerson' : ''}`}>
       <div className="personInfo">
-        <div className="initials">{firstNameLastName.split(" ").slice(0, 2).map((word) => word[0])}</div>
+        <div className="initials">
+          {firstNameLastName
+            .split(' ')
+            .slice(0, 2)
+            .map((word) => word[0])}
+        </div>
         <div className="nameAndTitle">
           <div className="firstNameLastName">{firstNameLastName}</div>
           <div className="jobTitle">{jobTitle}</div>
@@ -26,4 +28,6 @@ export const PersonInfo = memo(({ data, onSelect, isSelected }: PersonInfoProps)
       <div className="emailAddress">{emailAddress}</div>
     </div>
   );
-})
+};
+
+export const PersonInfo = memo(PersonInfoComponent);

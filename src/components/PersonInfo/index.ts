@@ -1,3 +1,3 @@
-import { PersonInfo } from "./PersonInfo";
+import { PersonInfo } from './PersonInfo';
 
-export { PersonInfo } from "./PersonInfo";
+export { PersonInfo };

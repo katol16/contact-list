@@ -1,7 +1,7 @@
-import React from "react";
-import { PersonInfo } from "..";
-import { type Contact } from "../../types";
-import "./ContactList.css";
+import React from 'react';
+import { PersonInfo } from '..';
+import { type Contact } from '../../types';
+import './ContactList.css';
 
 interface ContactListProps {
   list: Contact[];
@@ -11,10 +11,10 @@ interface ContactListProps {
 
 export const ContactList = ({ list, toggle, isSelected = false }: ContactListProps) => {
   console.log(
-    "📦 ContactList render",
-    isSelected ? "(selected)" : "(unselected)",
-    "items:",
-    list.length
+    '📦 ContactList render',
+    isSelected ? '(selected)' : '(unselected)',
+    'items:',
+    list.length,
   );
 
   return (
@@ -28,6 +28,5 @@ export const ContactList = ({ list, toggle, isSelected = false }: ContactListPro
         />
       ))}
     </div>
-  )
-}
-
+  );
+};

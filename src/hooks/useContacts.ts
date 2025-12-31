@@ -1,6 +1,10 @@
-import { useState, useEffect } from "react";
-import { type Contact } from "../types";
-import apiData from "../api";
+import { useState, useEffect } from 'react';
+import { type Contact } from '../types';
+import apiData from '../api';
+
+type ErrorWithMessage = {
+  message: string;
+};
 
 export const useContacts = () => {
   const [data, setData] = useState<Contact[]>([]);
@@ -13,8 +17,9 @@ export const useContacts = () => {
       setError(null);
       const result = await apiData();
       setData((prev) => [...prev, ...result]);
-    } catch (err: any) {
-      setError(err.message ?? "Unknown error");
+    } catch (err: unknown) {
+      const typedErr = err as ErrorWithMessage;
+      setError(typedErr.message ?? 'Unknown error');
     } finally {
       setLoading(false);
     }
@@ -25,4 +30,4 @@ export const useContacts = () => {
   }, []);
 
   return { data, loading, error, fetchContacts };
-}
+};
