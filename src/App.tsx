@@ -1,22 +1,25 @@
 import React from "react";
-import apiData from "./api";
-import PersonInfo from "./PersonInfo";
+import { ContactList, Spinner } from "./components";
+import { useContacts, useSelectableList } from "./hooks";
 
 function App() {
-  const [data, setData] = React.useState([]);
-  const [selected, setSelected] = React.useState([]);
-
-  //  TODO fetch contacts using apiData function, handle loading and error states
+  const { data, loading, error, fetchContacts } = useContacts();
+  const { selectedIds, selectedContacts, unselectedContacts, toggle } =
+    useSelectableList(data);
 
   return (
     <div className="App">
-      <div className="selected">Selected contacts: {selected.length}</div>
-      <div className="list">
-        {data.map((personInfo) => (
-          // @ts-ignore
-          <PersonInfo key={personInfo.id} data={personInfo} />
-        ))}
-      </div>
+      <main className="container">
+        <div className="selected">Selected contacts: {selectedIds.length}</div>
+        <ContactList list={selectedContacts} toggle={toggle} isSelected />
+        <hr />
+        <ContactList list={unselectedContacts} toggle={toggle} />
+        {loading && <Spinner/>}
+        {error && <div className="error">{error}</div>}
+        <button className="loadMoreBtn" onClick={fetchContacts} disabled={loading}>
+          Load more
+        </button>
+      </main>
     </div>
   );
 }

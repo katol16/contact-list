@@ -15,38 +15,26 @@ code {
   text-align: center;
   display: flex;
   justify-content: center;
-  align-items: space-between;
   margin: 20px 0;
 }
 
-.selected {
-  color: #333333;
-  font-size: 26px;
+.error {
+  color: #fff;
+  padding: 20px;
+  background-color: #e74c3c;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+.loadMoreBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  width: 100%;
   font-weight: 700;
-  margin: 10px 20px 0 0;
-}
-
-.person-info:hover {
-  padding: 30px;
-  border: 2px solid pink;
-}
-
-.firstNameLastName {
-  padding: 0 0 10px;
-  color: #333333;
-  font-size: 26px;
-  font-weight: 700;
-}
-
-.jobTitle {
-  padding: 0 0 20px;
-  color: #e74c3c;
-  font-size: 20px;
-  font-weight: 400;
-}
-
-.emailAddress {
-  color: #666666;
-  font-size: 14px;
-  line-height: 1.8em;
+  transition: background-color 0.3s ease;
 }
