@@ -15,8 +15,13 @@ function App() {
         <ContactList list={unselectedContacts} toggle={toggle} />
         {loading && <Spinner />}
         {error && <div className="error">{error}</div>}
-        <button className="loadMoreBtn" onClick={fetchContacts} disabled={loading}>
-          Load more
+        <button
+          className="loadMoreBtn"
+          onClick={fetchContacts}
+          disabled={loading}
+          data-testid="loadMoreBtn"
+        >
+          {error ? 'Try Again' : 'Load more'}
         </button>
       </main>
     </div>

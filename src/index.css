@@ -17,12 +17,18 @@ code {
   margin: 20px 0;
 }
 
+.selected {
+  font-weight: 400;
+  font-size: 20px;
+}
+
 .error {
   color: #fff;
   padding: 20px;
   background-color: #e74c3c;
   border-radius: 5px;
-  margin: 20px 0;
+  margin: 20px auto;
+  max-width: 200px;
 }
 
 .loadMoreBtn {
@@ -33,7 +39,12 @@ code {
   border-radius: 5px;
   background-color: #007bff;
   color: white;
-  width: 100%;
   font-weight: 700;
   transition: background-color 0.3s ease;
+}
+
+.loadMoreBtn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  color: #666;
 }

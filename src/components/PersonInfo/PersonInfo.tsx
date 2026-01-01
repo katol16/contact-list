@@ -9,10 +9,13 @@ interface PersonInfoProps {
 }
 
 const PersonInfoComponent = ({ data, onSelect, isSelected }: PersonInfoProps) => {
-  console.log('PersonInfo render:', data.id);
   const { id, firstNameLastName, jobTitle, emailAddress } = data;
   return (
-    <div onClick={() => onSelect(id)} className={`person ${isSelected ? 'selectedPerson' : ''}`}>
+    <div
+      onClick={() => onSelect(id)}
+      className={`person ${isSelected ? 'selectedPerson' : ''}`}
+      data-testid={`person-${id}`}
+    >
       <div className="personInfo">
         <div className="initials">
           {firstNameLastName

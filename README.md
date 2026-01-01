@@ -71,3 +71,44 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+---
+
+# Technical Notes for Recruiters
+
+This implementation was prepared by Karol Vogelgezang as part of a recruitment task.
+
+# Contact List App
+
+This project is a **Contact List application** built in **React + TypeScript**, implementing the requirements of a recruitment task. It demonstrates fetching paginated contact data, selecting/deselecting contacts, handling loading and error states, and basic performance optimizations.
+
+---
+
+## Features
+
+- **Fetch contacts:** Contacts are fetched from the provided `apiData` function, 10 items per batch. The "Load more" button fetches the next batch and appends it to the list.
+- **Loading & Error States:** A spinner is displayed while loading. Errors show a message, and the "Load more" button changes to "Try Again" to allow retry.
+- **Selectable contacts:** Each contact card is clickable. Selected cards are highlighted, can be deselected, and always appear at the top of the list.
+- **Performance Optimizations:** `PersonInfo` cards are wrapped in `React.memo` to avoid unnecessary re-renders when toggling selection.
+- **User Experience:** "Load more" button is at the bottom, disabled during loading to prevent multiple fetches, and the layout separates selected and unselected contacts.
+
+---
+
+## Architecture & Decisions
+
+- **Custom hooks:**
+    - `useContacts` – manages fetching, loading, error states, and pagination.
+    - `useSelectableList` – manages selected/unselected contacts and toggle logic.
+- **Component structure:**
+    - `App.tsx` – main container with lists, spinner, error display, and load button.
+    - `ContactList.tsx` – renders a list of `PersonInfo` components.
+    - `PersonInfo.tsx` – individual contact card with selection handling.
+- **Memoization:** `PersonInfo` uses `React.memo` to optimize rendering.
+- **Testing:** Covers fetching, loading, error handling, button behavior, and selection functionality. `data-testid` attributes were added for reliable testing.
+
+---
+
+## Note
+
+React 18 Strict Mode is enabled during development, which causes the useEffect that calls `fetchContacts` function to run twice on initial render. This does **not** affect production behavior.

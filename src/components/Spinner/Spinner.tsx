@@ -2,5 +2,5 @@ import React from 'react';
 import './Spinner.css';
 
 export const Spinner = () => {
-  return <div className="spinner" />;
+  return <div data-testid="spinner" className="spinner" />;
 };
