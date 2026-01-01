@@ -109,6 +109,14 @@ This project is a **Contact List application** built in **React + TypeScript**, 
 
 ---
 
+## Code Quality & Linting
+
+This project uses **ESLint** and **Prettier** for code quality and formatting.
+- ESLint configuration is customized for **React + TypeScript**.
+- All linting errors are displayed in the editor (e.g., VSCode) in real-time.
+- Prettier ensures consistent code formatting across the project.
+- No unnecessary dependencies were added; all rules are essential for maintaining code quality.
+
 ## Note
 
 React 18 Strict Mode is enabled during development, which causes the useEffect that calls `fetchContacts` function to run twice on initial render. This does **not** affect production behavior.
